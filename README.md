@@ -17,6 +17,7 @@
  - json: Stored as a JSON string. GET/SET commands can access it
  - hash: Stored as a Hash. H* commands such as HMGET/HMSET can access it
 - **key**: Column name used for a key in Redis (string, required)
+- **expires**: redis key expires second (integer, default: 0)
 
 ### Example
 
@@ -29,5 +30,6 @@ out:
   key: id
   key_prefix: user_
   encode: json
+  expires: 60
 ```
 
