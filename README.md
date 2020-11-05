@@ -1,8 +1,10 @@
-# Embulk output plugin for Redis
+# Embulk output plugin for Redis with Expires
 
 ## Generic
 
 ### Overview
+
+Thanks for komamitsu, origin version: https://github.com/komamitsu/embulk-output-redis
 
 * **Plugin type**: output
 * **Resume supported**: no
