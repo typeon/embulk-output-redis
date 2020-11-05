@@ -15,6 +15,7 @@ module Embulk
         'key' => config.param('key', :string),
         'key_prefix' => config.param('key_prefix', :string, :default => ''),
         'encode' => config.param('encode', :string, :default => 'json'),
+        'expires' => config.param('encode', :integer, :default => 0),
       }
 
       puts "Redis output started."
@@ -43,9 +44,17 @@ module Embulk
           case task['encode']
           when 'json'
             v = hash.to_json
-            @redis.set(k, v)
+            if task['expires'] > 0
+              @redis.set(k, v, ex: task['expires'])
+            else
+              @redis.set(k, v)
+            end
           when 'hash'
-            @redis.hmset(k, hash.to_a.flatten)
+            if task['expires'] > 0
+              @redis.hmset(k, hash.to_a.flatten, ex: task['expires'])
+            else
+              @redis.hmset(k, hash.to_a.flatten)
+            end
           end
           @unique_keys << k
         else
