@@ -15,7 +15,7 @@ module Embulk
         'key' => config.param('key', :string),
         'key_prefix' => config.param('key_prefix', :string, :default => ''),
         'encode' => config.param('encode', :string, :default => 'json'),
-        'expires' => config.param('encode', :integer, :default => 0),
+        'expires' => config.param('expires', :integer, :default => 0),
       }
 
       puts "Redis output started."
