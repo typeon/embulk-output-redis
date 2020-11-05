@@ -5,7 +5,7 @@ module Embulk
     require 'json'
     require 'set'
 
-    Plugin.register_output('redis', self)
+    Plugin.register_output('redisWithExpires', self)
 
     def self.transaction(config, schema, processor_count, &control)
       task = {

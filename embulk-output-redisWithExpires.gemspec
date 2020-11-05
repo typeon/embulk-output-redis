@@ -1,12 +1,12 @@
 
 Gem::Specification.new do |gem|
   gem.name          = "embulk-output-redisWithExpires"
-  gem.version       = "0.1.0"
+  gem.version       = "0.1.1"
 
   gem.summary       = %q{Embulk output plugins for Redis with expires}
   gem.description   = gem.summary
-  gem.authors       = ["sangbae kang"]
-  gem.email         = ["sb.kang@purple.io"]
+  gem.authors       = ["sangbae kang", "inmo Hwang"]
+  gem.email         = ["sb.kang@purple.io", "im.hwang@purple.io"]
   gem.license       = "Apache 2.0"
   gem.homepage      = "https://github.com/typeon/embulk-output-redisWithExpires"
 

@@ -25,7 +25,7 @@ Thanks for komamitsu, origin version: https://github.com/komamitsu/embulk-output
 
 ```yaml
 out:
-  type: redis
+  type: redisWithExpires
   host: localhost
   port: 6379
   db: 0
